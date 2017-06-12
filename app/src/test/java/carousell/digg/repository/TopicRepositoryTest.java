@@ -1,10 +1,10 @@
-package repository;
+package carousell.digg.repository;
 
 import org.junit.Test;
 
 import java.util.List;
 
-import model.Topic;
+import carousell.digg.model.Topic;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -1,4 +1,4 @@
-package model;
+package carousell.digg.model;
 
 import org.junit.Test;
 

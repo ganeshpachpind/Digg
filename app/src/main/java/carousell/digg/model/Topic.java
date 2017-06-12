@@ -1,4 +1,4 @@
-package model;
+package carousell.digg.model;
 
 
 public class Topic {

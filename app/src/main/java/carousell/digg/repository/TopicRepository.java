@@ -1,9 +1,9 @@
-package repository;
+package carousell.digg.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Topic;
+import carousell.digg.model.Topic;
 
 public class TopicRepository {
     List<Topic> topics;
