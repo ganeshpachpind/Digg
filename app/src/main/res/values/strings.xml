@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Digg</string>
+    <string name="add_topic">Add Topic</string>
+    <string name="submit">Submit</string>
+    <string name="content">Content</string>
+    <string name="invalid_topic">Topic content length cannot be more than 256 char</string>
 </resources>
