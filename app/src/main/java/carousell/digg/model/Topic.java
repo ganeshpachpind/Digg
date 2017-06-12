@@ -29,4 +29,12 @@ public class Topic {
     public void downVote() {
         downVoteCount++;
     }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public boolean isValid() {
+        return content.length() <= 256;
+    }
 }
