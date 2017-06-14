@@ -43,7 +43,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> implemen
 
     @Override
     public void dataChanged() {
-        sort();
+        // sort();     we could call this method to allow sorting as soon as user interact
         notifyDataSetChanged();
     }
 

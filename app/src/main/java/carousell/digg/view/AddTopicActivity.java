@@ -1,8 +1,9 @@
 package carousell.digg.view;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import carousell.digg.R;
 import carousell.digg.databinding.AddTopicBinding;
@@ -10,7 +11,7 @@ import carousell.digg.model.Topic;
 import carousell.digg.repository.TopicRepository;
 import carousell.digg.view.model.AddTopicViewModel;
 
-public class AddTopicActivity extends Activity implements AddTopicView {
+public class AddTopicActivity extends AppCompatActivity implements AddTopicView {
 
     private AddTopicBinding addTopicBinding;
 
@@ -26,12 +27,12 @@ public class AddTopicActivity extends Activity implements AddTopicView {
 
     @Override
     public void showError() {
-        addTopicBinding.contentLayout.setError(getString(R.string.invalid_topic));
+        addTopicBinding.errorMessage.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideError() {
-        addTopicBinding.contentLayout.setError(null);
+        addTopicBinding.errorMessage.setVisibility(View.GONE);
     }
 
     @Override

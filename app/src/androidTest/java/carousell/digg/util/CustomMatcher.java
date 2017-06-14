@@ -1,37 +1,36 @@
 package carousell.digg.util;
 
 
-import android.support.design.widget.TextInputLayout;
+import android.support.annotation.NonNull;
+import android.support.test.espresso.matcher.BoundedMatcher;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
+
+import static android.support.test.internal.util.Checks.checkNotNull;
 
 public class CustomMatcher {
-    public static Matcher<View> hasTextInputLayoutErrorText(final String expectedErrorText) {
-        return new TypeSafeMatcher<View>() {
-
+    public static Matcher<View> atPosition(final int position, @NonNull final Matcher<View> itemMatcher) {
+        checkNotNull(itemMatcher);
+        return new BoundedMatcher<View, RecyclerView>(RecyclerView.class) {
             @Override
-            public boolean matchesSafely(View view) {
-                if (!(view instanceof TextInputLayout)) {
-                    return false;
-                }
-
-                CharSequence error = ((TextInputLayout) view).getError();
-
-                if (error == null) {
-                    return false;
-                }
-
-                String hint = error.toString();
-
-                return expectedErrorText.equals(hint);
+            public void describeTo(Description description) {
+                description.appendText("has item at position " + position + ": ");
+                itemMatcher.describeTo(description);
             }
 
             @Override
-            public void describeTo(Description description) {
+            protected boolean matchesSafely(final RecyclerView view) {
+                RecyclerView.ViewHolder viewHolder = view.findViewHolderForAdapterPosition(position);
+                if (viewHolder == null) {
+                    // has no item on such position
+                    return false;
+                }
+                return itemMatcher.matches(viewHolder.itemView);
             }
         };
     }
+
 }

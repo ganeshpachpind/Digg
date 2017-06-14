@@ -12,6 +12,12 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="errorMessage">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
     <color name="black">#000000</color>
 
 </resources>

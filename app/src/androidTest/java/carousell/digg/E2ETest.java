@@ -31,7 +31,9 @@ public class E2ETest {
 
         homePage
                 .clickShowTopic()
-                .verifyTopicItemsInTheList();
+                .increaseUpVote()
+                .increaseDownVote()
+                .verifyTopicItemAndCountInTheList();
 
     }
 }
