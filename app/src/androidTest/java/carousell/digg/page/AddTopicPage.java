@@ -14,8 +14,8 @@ import static carousell.digg.util.CustomMatcher.hasTextInputLayoutErrorText;
 
 public class AddTopicPage {
 
-    public AddTopicPage enterValidTopicDetailsAndSubmit() throws InterruptedException {
-        enterContent("Some details of the topic");
+    public AddTopicPage enterValidTopicDetailsAndSubmit(String details) throws InterruptedException {
+        enterContent(details);
         clickSubmit();
         return this;
     }

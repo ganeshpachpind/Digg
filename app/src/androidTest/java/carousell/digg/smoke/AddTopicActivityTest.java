@@ -30,7 +30,7 @@ public class AddTopicActivityTest {
     public void shouldSaveValidTopic() throws Exception {
         AddTopicPage addTopicPage = new AddTopicPage();
         addTopicPage
-                .enterValidTopicDetailsAndSubmit();
+                .enterValidTopicDetailsAndSubmit("Some details");
 
     }
 
