@@ -21,8 +21,11 @@ public class TopicListActivity extends AppCompatActivity {
         TopicListBinding topicListBinding = DataBindingUtil.setContentView(this, R.layout.topic_list);
         topicListBinding.topicList.setLayoutManager(new LinearLayoutManager(this));
 
-        TopicRepository topicRepository = new TopicRepository();
+        TopicRepository topicRepository = TopicRepository.getInstance();
+
         List<Topic> topics = topicRepository.getTopics();
-        topicListBinding.topicList.setAdapter(new TopicAdapter(topics));
+
+        TopicAdapter adapter = new TopicAdapter(topics);
+        topicListBinding.topicList.setAdapter(adapter);
     }
 }

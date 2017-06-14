@@ -9,8 +9,11 @@ import java.util.List;
 
 import carousell.digg.databinding.TopicRowBinding;
 import carousell.digg.model.Topic;
+import carousell.digg.repository.TopicRepository;
+import carousell.digg.view.TopicListView;
+import carousell.digg.view.model.TopicViewModel;
 
-public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> {
+public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> implements TopicListView {
 
     private List<Topic> topics;
 
@@ -27,12 +30,17 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> {
 
     @Override
     public void onBindViewHolder(TopicViewHolder holder, int position) {
-        Topic topic = topics.get(position);
-        holder.bind(topic);
+        TopicViewModel topicViewModel = new TopicViewModel(topics.get(position), TopicRepository.getInstance(), this);
+        holder.bind(topicViewModel);
     }
 
     @Override
     public int getItemCount() {
         return topics.size();
+    }
+
+    @Override
+    public void dataChanged() {
+        notifyDataSetChanged();
     }
 }

@@ -19,7 +19,8 @@ public class AddTopicActivity extends Activity implements AddTopicView {
         super.onCreate(savedInstanceState);
         addTopicBinding = DataBindingUtil.setContentView(this, R.layout.add_topic);
 
-        AddTopicViewModel addTopicViewModel = new AddTopicViewModel(this, new Topic(""), new TopicRepository());
+        TopicRepository topicRepository = TopicRepository.getInstance();
+        AddTopicViewModel addTopicViewModel = new AddTopicViewModel(this, new Topic(""), topicRepository);
         addTopicBinding.setAddTopicModel(addTopicViewModel);
     }
 

@@ -14,7 +14,7 @@ public class TopicRepositoryTest {
     @Test
     public void shouldIncreaseTopicListOnTopicSaved() throws Exception {
 
-        TopicRepository topicRepository = new TopicRepository();
+        TopicRepository topicRepository = TopicRepository.getInstance();
 
         Topic topic = new Topic("some content");
         topicRepository.save(topic);

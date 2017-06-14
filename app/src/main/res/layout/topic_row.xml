@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="topicViewModel"
-            type="carousell.digg.model.Topic" />
+            type="carousell.digg.view.model.TopicViewModel" />
     </data>
 
 
@@ -17,10 +17,63 @@
         android:layout_marginRight="10dp"
         android:orientation="vertical">
 
+
         <TextView
+            android:id="@+id/content"
+            style="@style/topic_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@{topicViewModel.topic.content}"
+            tools:text="Some content of the project " />
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{topicViewModel.content}" />
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/upVote"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrow_up"
+                android:onClick="@{topicViewModel::onUpVoteClicked}" />
+
+            <TextView
+                android:id="@+id/upVoteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:text="@{Long.toString(topicViewModel.topic.upVoteCount)}"
+                tools:text="10000" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/gray" />
+
+            <Button
+                android:id="@+id/downVote"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrow_down"
+                android:onClick="@{topicViewModel::onDownVoteClicked}" />
+
+            <TextView
+                android:id="@+id/downVoteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{Long.toString(topicViewModel.topic.downVoteCount)}"
+                tools:text="200" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
