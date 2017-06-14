@@ -5,4 +5,6 @@ public interface AddTopicView {
     void showError();
 
     void hideError();
+
+    void close();
 }

@@ -33,4 +33,9 @@ public class AddTopicActivity extends Activity implements AddTopicView {
     public void hideError() {
         addTopicBinding.contentLayout.setError(null);
     }
+
+    @Override
+    public void close() {
+        finish();
+    }
 }

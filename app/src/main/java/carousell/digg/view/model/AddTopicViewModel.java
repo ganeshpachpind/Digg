@@ -22,6 +22,7 @@ public class AddTopicViewModel {
         if (topic.isValid()) {
             topicRepository.save(topic);
             addTopicView.hideError();
+            addTopicView.close();
         } else {
             addTopicView.showError();
         }

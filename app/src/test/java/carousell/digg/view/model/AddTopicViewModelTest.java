@@ -27,6 +27,7 @@ public class AddTopicViewModelTest {
         verify(topicRepository).save(topic);
         verify(addTopicView).hideError();
         verify(addTopicView, never()).showError();
+        verify(addTopicView).close();
     }
 
     @Test
@@ -49,6 +50,7 @@ public class AddTopicViewModelTest {
         verify(addTopicView).showError();
         verify(topicRepository, never()).save(topic);
         verify(addTopicView, never()).hideError();
+        verify(addTopicView, never()).close();
     }
 
 }
