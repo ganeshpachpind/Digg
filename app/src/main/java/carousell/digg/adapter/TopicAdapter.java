@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import java.util.Collections;
 import java.util.List;
 
 import carousell.digg.databinding.TopicRowBinding;
 import carousell.digg.model.Topic;
+import carousell.digg.model.TopicComparator;
 import carousell.digg.repository.TopicRepository;
 import carousell.digg.view.TopicListView;
 import carousell.digg.view.model.TopicViewModel;
@@ -41,6 +43,11 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> implemen
 
     @Override
     public void dataChanged() {
+        sort();
         notifyDataSetChanged();
+    }
+
+    public void sort() {
+        Collections.sort(topics, new TopicComparator());
     }
 }

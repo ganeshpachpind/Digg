@@ -26,6 +26,7 @@ public class TopicListActivity extends AppCompatActivity {
         List<Topic> topics = topicRepository.getTopics();
 
         TopicAdapter adapter = new TopicAdapter(topics);
+        adapter.sort();
         topicListBinding.topicList.setAdapter(adapter);
     }
 }
