@@ -4,4 +4,5 @@
     <string name="submit">Submit</string>
     <string name="content">Content</string>
     <string name="invalid_topic">Topic content length cannot be more than 256 char</string>
+    <string name="show_topics">Show Topics</string>
 </resources>

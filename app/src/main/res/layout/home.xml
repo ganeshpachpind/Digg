@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="carousell.digg.view.model.HomeViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        tools:context="carousell.digg.view.HomeActivity">
+
+        <Button
+            android:id="@+id/showTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{homeViewModel::onAddTopicClicked}"
+            android:text="@string/add_topic" />
+
+        <Button
+            android:id="@+id/addTopic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{homeViewModel::onShowTopicsClicked}"
+            android:text="@string/show_topics" />
+
+    </LinearLayout>
+
+</layout>
