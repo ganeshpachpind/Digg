@@ -8,6 +8,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static carousell.digg.util.CustomMatcher.hasTextInputLayoutErrorText;
 
@@ -42,5 +43,10 @@ public class AddTopicPage {
 
     public void verifyErrorMessageShown() {
         onView(withId(R.id.contentLayout)).check(matches(hasTextInputLayoutErrorText("Topic content length cannot be more than 256 char")));
+    }
+
+    public void verifyAddTopicActivityOpen() {
+        onView(withId(R.id.content)).check(matches(isDisplayed()));
+        onView(withId(R.id.submit)).check(matches(isDisplayed()));
     }
 }

@@ -20,7 +20,9 @@
         <activity
             android:name=".view.AddTopicActivity"
             android:label="@string/add_topic" />
-        <activity android:name=".view.TopicListActivity" />
+        <activity
+            android:name=".view.TopicListActivity"
+            android:label="@string/topics" />
     </application>
 
 </manifest>
