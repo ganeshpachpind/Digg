@@ -9,16 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.HomeActivity">
-        </activity>
+        <activity android:name=".view.HomeActivity"></activity>
         <activity
             android:name=".view.AddTopicActivity"
             android:label="@string/add_topic">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            
+        </activity>
+        <activity android:name=".view.TopicListActivity">
         </activity>
     </application>
 

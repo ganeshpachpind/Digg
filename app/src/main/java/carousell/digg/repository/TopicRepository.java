@@ -6,7 +6,7 @@ import java.util.List;
 import carousell.digg.model.Topic;
 
 public class TopicRepository {
-    List<Topic> topics;
+    private List<Topic> topics;
 
     public TopicRepository() {
         topics = new ArrayList<>();
